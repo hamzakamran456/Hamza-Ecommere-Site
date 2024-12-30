@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", serif;
+      }
+      .btn {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+      .quantity_group {
+        border: 1px solid #088178;
+        border-radius: 6px;
+        display: inline-block;
+      }
+      .btn1 {
+        width: 30px;
+        height: 35px;
+        outline: none;
+        border: none;
+        color: #088178;
+        background-color: rgba(236, 241, 246, 0.5);
+        cursor: pointer;
+        font-family: "Poppins";
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .btn-input {
+        width: 40px;
+        height: 30px;
+        padding: 0 !important;
+        outline: none;
+        border: none;
+        font-weight: 600;
+        background-color: white;
+        color: rgb(49, 49, 49);
+        text-align: center;
+      }
+      .total_amount {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+      }
+      .btn h4,
+      .total_amount h4 {
+        text-transform: capitalize;
+        font-family: "Poppins";
+        font-size: 14px;
+        font-weight: 600;
+        color: #222;
+      }
+      .total_price {
+        font-family: "Poppins";
+        font-size: 14px;
+        font-weight: 600;
+        color: #088178;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      <h4>Quantity :</h4>
+      <div class="quantity_group">
+        <button class="btn1 btn-decrement">-</button>
+        <input type="text" id="quantity" class="btn-input" value="1" />
+        <button class="btn1 btn-increment">+</button>
+      </div>
+    </div>
+    <div class="total_amount">
+      <h4>Total Price :</h4>
+      <p class="total_price">
+        <span>$</span>
+        <span class="price">139.00</span>
+      </p>
+    </div>
+    <script>
+      let valueCount = 1;
+      let increment = document.querySelector(".btn-increment");
+      let decrement = document.querySelector(".btn-decrement");
+      let count = document.querySelector("#quantity");
+      let totalCount = document.querySelector(".price");
+
+      increment.addEventListener("click", () => {
+        let add = valueCount++;
+        count.value = add;
+        totalCount.innerHTML = (add * 139.00).toFixed(2);
+      });
+      decrement.addEventListener("click", () => {
+        if(valueCount>=2){
+        let sub = --valueCount;
+        count.value = sub;
+        totalCount.innerHTML = (sub * 139.00).toFixed(2);
+        }
+      });
+    </script>
+  </body>
+</html>
