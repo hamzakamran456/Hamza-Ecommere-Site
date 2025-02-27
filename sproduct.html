@@ -14,6 +14,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
   </head>
   <body>
     <header>
@@ -87,7 +92,16 @@
             <span class="price">139.00</span>
           </p>
         </div>
-        <button id="success" class="normal" onclick="success()"class="btn btn-primary btn-xl" type="submit" id="btnShow">Add To Cart</button>
+        <button
+          id="success"
+          class="normal"
+          onclick="success()"
+          class="btn btn-primary btn-xl"
+          type="submit"
+          id="btnShow"
+        >
+          Add To Cart
+        </button>
         <h4>Product Details</h4>
         <span
           >The Gildan Ultra Cotton T-Shirts is made from a Sustantial 6.0 oz.
@@ -232,13 +246,13 @@
       </div>
     </footer>
     <div class="floating_btn">
-      <a href onclick="openInNewTab()"><img src="images/whatsapp.svg"></a>
+      <a href onclick="openInNewTab()"><img src="images/whatsapp.svg" /></a>
     </div>
     <script>
       function openInNewTab() {
-          window.open("https://wa.me/923032019428", '_blank');
+        window.open("https://wa.me/923032019428", "_blank");
       }
-  </script>
+    </script>
     <script>
       var MainImg = document.getElementById("MainImg");
       var smallimg = document.getElementsByClassName("small-img");
@@ -277,7 +291,12 @@
     </script>
     <script>
       function success() {
-        alert("Successfully Done!");
+        // alert("Successfully Done!");
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success",
+        });
       }
     </script>
     <script src="script.js"></script>
